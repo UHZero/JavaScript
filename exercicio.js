@@ -1,6 +1,6 @@
 /* 1)Crie uma função que dado dois valores (passados como parâmetros) mostre no console a soma, subtração,
 multiplicação e divisão desses valores.*/
-const funcao = function(x, y) {
+const funcao = function (x, y) {
     return {
         soma: x + y,
         sub: x - y,
@@ -22,15 +22,15 @@ const calcTriangulo = function (a = 0, b = 0, c = 0) {
         return 'escaleno'
     }
 }
- console.log(calcTriangulo(6, 4, 3))
+console.log(calcTriangulo(6, 4, 3))
 
- // 3) Crie uma função que recebe dois parâmetros, base e expoente, e retorne a base elevada ao expoente.
- const baseExp = function (base, expoente) {
-     return base ** expoente
- }
- console.log(baseExp(5, 5))
+// 3) Crie uma função que recebe dois parâmetros, base e expoente, e retorne a base elevada ao expoente.
+const baseExp = function (base, expoente) {
+    return base ** expoente
+}
+console.log(baseExp(5, 5))
 
- /* 04) Crie uma função que irá receber dois valores, o dividendo e o divisor. A função deverá imprimir o resultado
+/* 04) Crie uma função que irá receber dois valores, o dividendo e o divisor. A função deverá imprimir o resultado
 e o resto da divisão destes dois valores.*/
 const divRest = function (dividendo, divisor) {
     return {
@@ -55,17 +55,17 @@ const aplicaAqui = function (capInicial, taxaJuros, tempoAplic) {
     const retornoSimples = capInicial + ((capInicial * taxaJuros) * tempoAplic)
     const retornoComposto = capInicial * (1 + taxaJuros) ** tempoAplic
     console.log(retornoSimples)
-    console.log(retornoComposto.toFixed(2).toString().replace('.',','))
+    console.log(retornoComposto.toFixed(2).toString().replace('.', ','))
 }
 
 aplicaAqui(500, 0.05, 30)
 
 // ainda sobre questão 6 - resolução do professor:
-function jurosSimples (capitalInicial, taxa, tempo) {
+function jurosSimples(capitalInicial, taxa, tempo) {
     return capitalInicial + (capitalInicial * taxa * tempo)
 }
 
-function jurosCompostos (capitalInicial, taxa, tempo) {
+function jurosCompostos(capitalInicial, taxa, tempo) {
     return capitalInicial * (1 + taxa) ** tempo
 }
 
@@ -102,4 +102,53 @@ Exemplo:
 String: “10 20 20 8 25 3 0 30 1”
 Retorno: [3, 7] (Significa que ele bateu três vezes seu recorde de melhor pontuação e a pior pontuação
 aconteceu no sétimo jogo.) */
+
+let stringPontuacoes = "30, 40, 20, 4, 51, 25, 42, 38, 56, 0"
+
+function analiseDePontuacao(stringPontuacoes) {
+    let pontuacoes = stringPontuacoes.split(", ")
+    let numeroDeRecords = 0
+    let piorPontuacaoTemporada = 1
+    let maiorPontuacao = pontuacoes[0]
+    let menorPontuacao = pontuacoes[0]
+
+    for (let i = 1; i < pontuacoes.length; i++) {
+        if (pontuacoes[i] > maiorPontuacao) {
+            maiorPontuacao = pontuacoes[i]
+            numeroDeRecords++
+        } else if (pontuacoes[i] < menorPontuacao) {
+            menorPontuacao = pontuacoes[i]
+            piorPontuacaoTemporada = i + 1;
+        }
+    }
+    return ['n° de record: ' + numeroDeRecords, 'colocação do pior jogo: ' + piorPontuacaoTemporada + '°']
+}
+
+console.log(analiseDePontuacao(stringPontuacoes))
+
+/* 9)  Construa uma função para um sistema de notas de uma instituição que possui a seguinte política de 
+classificação: Todo aluno recebe uma nota de 0 a 100. Alunos com nota abaixo de 40 são reprovados. As notas 
+possuem a seguinte regra de arredondamento: Se a diferença entre a nota e o próximo múltiplo de 5 for menor 
+que 3, arredondar a nota para esse próximo múltiplo de 5. Se a nota for abaixo de 38, não é feito nenhum 
+arredondamento pois esta nota resulta na reprovação do aluno. Por exemplo, a nota 84 será arredondada para 
+85, mas a nota 29 não será arredondada por ser abaixo de 40 e não ser possível arredondamento eficiente, ou 
+seja, que evite a reprovação do aluno. No caso de a nota ser 38, o arredondamento é possível pois atingirá 40 
+e o aluno será aprovado. */
+Number.prototype.validacao = function (inicio, fim) {
+    return this >= inicio && this <= fim
+}
+
+const AprovacaoSis = function (nota) {
+    if (nota.validacao(38, 100)) {
+        return console.log('aprovado com a nota: ' + Math.ceil(nota / 5) * 5)
+    } else if (nota.validacao(0, 37.99)) {
+        return console.log('reprovado com a nota: ' + nota)
+    } else {
+        nota != Number
+        return console.log('valor inválido')
+    }
+}
+AprovacaoSis(38)
+AprovacaoSis(25)
+// descobrir como adaptar para valor invalido caso o usuario insira uma letra ou string no lugar de number
 
