@@ -152,3 +152,57 @@ AprovacaoSis(38)
 AprovacaoSis(25)
 // descobrir como adaptar para valor invalido caso o usuario insira uma letra ou string no lugar de number
 
+/* 10) ​Crie uma função que verifica se um número inteiro passado como parêmetro é divisível por 3 e retorne true 
+ou false. */
+
+const divisivelPorTres = (inteiro) => {
+    if (inteiro % 3 == 0) {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(divisivelPorTres(4))
+console.log(divisivelPorTres(9))
+
+/* 11) ​As regras para o cálculo dos anos bissextos são as seguintes: 
+De 4 em 4 anos é ano bissexto; 
+De 100 em 100 anos não é ano bissexto; 
+De 400 em 400 anos é ano bissexto; 
+Prevalecem as últimas regras sobre as primeiras. 
+Partindo daí elabore uma função que recebe um ano e calcula se ele é ano bissexto, imprimindo no console a mensagem e retornando  true ou false.   */
+
+
+
+const bissexto = function (anoAtual) {
+    if (anoAtual <= 0) {
+        return false
+    }else if (anoAtual % 400 == 0) {
+        return true
+    }else if (anoAtual % 100 == 0) {
+        return false
+    }else if (anoAtual % 4 == 0) {
+        return true
+    }else {
+        return false
+    }
+}
+
+
+console.log(bissexto(1500))
+console.log(bissexto(800))
+console.log(bissexto(2000))
+console.log(bissexto(2022))
+console.log(bissexto(2020))
+
+// 12)​ Faça um algoritmo que calcule o fatorial de um número.
+const fatorialN = (fator) => {
+    if (fator == 0) {
+        return 1
+    }else {
+        return fator * fatorialN(fator - 1)
+    }
+}
+
+console.log(fatorialN(10))
