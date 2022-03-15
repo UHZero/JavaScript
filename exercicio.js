@@ -281,3 +281,37 @@ revendaCarro('sedans')
 revendaCarro('motocicletas')
 revendaCarro('caminhonetes')
 revendaCarro('carroX')
+
+/* 16)​ Utilizando a estrutura do Switch faça um programa que simule uma calculadora básicaO programa recebe 
+como parâmetros dois valores numéricos e uma string referente à operação e a realize com os valores 
+numéricos na ordem que foram inseridos. Por exemplo: calculadora (2, ‘+’, 3). A função efetuará a soma de 2 e 
+3. Dica: Os sinais das operações são: ‘+’. ‘-’, ‘*’ e ‘/’.  Crie um caso default para operações inválidas */
+
+const calcSwitch = (operacao, valor1, valor2) => {
+    switch (operacao) {
+        case 'soma':
+            return valor1 + valor2
+            break
+        case 'subtracao':
+            return valor1 - valor2
+            break
+        case 'multiplicacao':
+            return valor1 * valor2
+            break
+        case 'divisao':
+            return valor1 / valor2
+            break
+        case 'expoente':
+            return valor1 ** valor2
+            break
+        default:
+            return 'parametro não reconhecido'
+    }
+}
+
+console.log(calcSwitch('soma', 2, 4))
+console.log(calcSwitch('subtracao', 2, 4))
+console.log(calcSwitch('multiplicacao', 2, 4))
+console.log(calcSwitch('divisao', 2, 4))
+console.log(calcSwitch('expoente', 2, 4))
+console.log(calcSwitch('arroz', 2, 4))
