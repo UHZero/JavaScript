@@ -206,3 +206,28 @@ const fatorialN = (fator) => {
 }
 
 console.log(fatorialN(10))
+
+/* 13) ​Crie um programa que exibe se um dia é dia útil, fim de semana ou dia inválido dado o número referente ao 
+dia. Considere que domingo é o dia 1 e sábado é o dia 7. Utilize a estrutura Switch.  */
+
+const diaUtil = (dia) => {
+    switch (dia) {
+        case 7:
+            console.log(`sábado - fim de semana`)
+            break
+        case 1:
+            console.log(`domingo - fim de semana`)
+            break
+    case 2: case 3: case 4: case 5: case 6:
+        console.log(`${dia}° feira - dia útil`)
+        break
+    default:
+        console.log('dia inválido')
+    }
+}
+
+diaUtil(1)
+diaUtil(7)
+diaUtil(3)
+diaUtil(8)
+diaUtil('sabado')
