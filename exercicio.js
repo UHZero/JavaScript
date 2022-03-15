@@ -231,3 +231,53 @@ diaUtil(7)
 diaUtil(3)
 diaUtil(8)
 diaUtil('sabado')
+
+/* 14) ​Crie uma estrutura condicional switch que receba uma string com o nome de uma fruta e que possua três 
+casos: Caso maçã, retorne no console: “Não vendemos esta fruta aqui”. Caso kiwi, retorne: “Estamos com escassez de kiwis”. Caso melancia, retorne: “Aqui está, são 3 reais o quilo”. Teste com estas três opções .Crie 
+também um default, que retornará uma mensagem de erro no console */
+
+const quitanda = (fruta) => {
+    switch (fruta) {
+        case 'maçã':
+            console.log('Não vendemos esta fruta aqui')
+            break
+        case 'kiwi':
+            console.log('Estamos com escassez de kiwis')
+            break
+        case 'melancia':
+            console.log('Aqui está, são 3 reais o quilo')
+            break
+        default:
+            console.log('insira o indentificador correto')
+    }
+}
+
+quitanda('maçã')
+quitanda('kiwi')
+quitanda('melancia')
+quitanda('maça')
+
+/* 15) ​Um homem decidiu ir à uma revenda comprar um carro. Ele deseja comprar um carro hatch, e a revenda 
+possui, além de carros hatch, sedans, motocicletas e caminhonetes. Utilizando uma estrutura switch, caso o 
+comprador queira o hatch, retorne: “Compra efetuada com sucesso”. Nas outras opções, retorne: “Tem certeza 
+que não prefere este modelo?”. Caso seja especificado um modelo que não está disponível, retorne no console: 
+“Não trabalhamos com este tipo de automóvel aqui”.  */
+
+const revendaCarro = (modelo) => {
+    switch (modelo) {
+        case 'hatch':
+            console.log('compra efetuada com sucesso')
+            break
+        case 'sedans': case 'motocicletas': case 'caminhonetes':
+            console.log('Tem certeza que não prefere este modelo')
+            break
+        default:
+            console.log('Não trabalhamos com este tipo de automóvel aqui')
+    }
+}
+
+revendaCarro('hatch')
+revendaCarro('sedans')
+revendaCarro('motocicletas')
+revendaCarro('caminhonetes')
+revendaCarro('carroX')
