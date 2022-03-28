@@ -291,19 +291,14 @@ const calcSwitch = (operacao, valor1, valor2) => {
     switch (operacao) {
         case 'soma':
             return valor1 + valor2
-            break
         case 'subtracao':
             return valor1 - valor2
-            break
         case 'multiplicacao':
             return valor1 * valor2
-            break
         case 'divisao':
             return valor1 / valor2
-            break
         case 'expoente':
             return valor1 ** valor2
-            break
         default:
             return 'parametro não reconhecido'
     }
@@ -315,3 +310,91 @@ console.log(calcSwitch('multiplicacao', 2, 4))
 console.log(calcSwitch('divisao', 2, 4))
 console.log(calcSwitch('expoente', 2, 4))
 console.log(calcSwitch('arroz', 2, 4))
+
+/* 17)​ Um funcionário irá receber um aumento de acordo com o seu plano de 
+trabalho, de acordo com a tabela abaixo: Plano A = 10%, Plano B = 15%, Plano C = 20%, ​ Um funcionário irá receber um aumento de acordo com o seu plano de trabalho, de acordo com a tabela abaixo: */
+
+const planoSalarial = (plano, salarioAtual) => {
+    const porcentagem = [0.1, 0.15, 0.2];
+    switch (plano) {
+        case 'planoA':
+            return (salarioAtual * (1 + porcentagem[0])).toFixed(2);
+        case 'planoB':
+            return (salarioAtual * (1 + porcentagem[1])).toFixed(2);
+        case 'planoC':
+            return (salarioAtual * (1 + porcentagem[2])).toFixed(2);
+        default:
+            return 'plano inválido'
+    }
+}
+
+console.log(planoSalarial('planoA', 1350));
+console.log(planoSalarial('planoB', 1350));
+console.log(planoSalarial('planoC', 1350));
+
+/* 18) Faça um programa que leia um número entre 0 e 10, e escreva este número por extenso. Use o comando 
+switch. Crie um case default que escreva ‘Número fora do intervalo.’ */
+
+const runNumber = (numberToString) => {
+    switch(numberToString){
+        case 0: return 'Zero'
+        case 1: return 'One'
+        case 2: return 'Two'
+        case 3: return 'Three'
+        case 4: return 'Four'
+        case 5: return 'Five'
+        case 6: return 'Six'
+        case 7: return 'Seven'
+        case 8: return 'Eight'
+        case 9: return 'Nine'
+        case 10: return 'Then'
+        default:
+            return 'Out of parameter, try 0-10!'
+    }
+};
+console.log(runNumber(0));
+console.log(runNumber(1));
+console.log(runNumber(2));
+console.log(runNumber(3));
+console.log(runNumber(4));
+console.log(runNumber(5));
+console.log(runNumber(6));
+console.log(runNumber(7));
+console.log(runNumber(8));
+console.log(runNumber(9));
+console.log(runNumber(10));
+console.log(runNumber(11));
+
+/*  ​19) Implemente uma  função que receba como parâmetros o código do item pedido, a quantidade e calcule o valor 
+a ser pago por aquele lanche. Considere que a cada execução somente será calculado um item. Use o 
+comando switch. Crie um caso default para produto não existente.  */
+const cardapioLanchonete = (codigoItem, quantidadeItem) => {
+    let CachorroQuente = 3.00;
+    let HamburguerSimples = 4.00;
+    let Cheeseburguer = 5.50;
+    let Bauru = 7.50;
+    let Refrigerante = 3.50;
+    let Suco = 2.80;
+    switch(codigoItem) {
+        case 100: return `Item(s) do pedido: Cachorro-quente, Total: ${(CachorroQuente * quantidadeItem).toFixed(2).replace('.', ',')}R$.`
+        case 200: return `Item(s) do pedido: Hamburguer-Simples, Total: ${(HamburguerSimples * quantidadeItem).toFixed(2).replace('.', ',')}R$.`
+        case 300: return `Item(s) do pedido: Cheeseburguer, Total: ${(Cheeseburguer * quantidadeItem).toFixed(2).replace('.', ',')}R$.`
+        case 400: return `Item(s) do pedido: Bauru, Total: ${(Bauru * quantidadeItem).toFixed(2).replace('.', ',')}R$.`
+        case 500: return `Item(s) do pedido: Refrigerante, Total: ${(Refrigerante * quantidadeItem).toFixed(2).replace('.', ',')}R$.`
+        case 600: return `Item(s) do pedido: Suco, Total: ${(Suco * quantidadeItem).toFixed(2).replace('.', ',')}R$.`
+        default: return 'produto não existente!'
+    }
+}
+console.log(cardapioLanchonete(100, 3));
+console.log(cardapioLanchonete(200, 1));
+console.log(cardapioLanchonete(300, 5));
+console.log(cardapioLanchonete(400, 2));
+console.log(cardapioLanchonete(500, 1));
+console.log(cardapioLanchonete(600, 4));
+console.log(cardapioLanchonete(700, 1));
+
+/*  20)​ Crie um programa para informar quais e quantas notas são necessárias para entregar o mínimo de cédulas 
+para um determinado valor informado pelo usuário considerando notas de R$ 100, R$ 50, R$ 10 e R$ 5 e R$ 1. 
+Seu programa deve mostrar apenas as notas utilizadas. Por exemplo, ao solicitar R$18, o programa deve 
+informar apenas a seguinte informação (note que não foram exibidas informações sobre as demais cédulas): 1 
+nota(s) de R$ 10. 1 nota(s) de R$ 5. 3 nota(s) de R$ 1. */
