@@ -398,3 +398,81 @@ para um determinado valor informado pelo usuário considerando notas de R$ 100, 
 Seu programa deve mostrar apenas as notas utilizadas. Por exemplo, ao solicitar R$18, o programa deve 
 informar apenas a seguinte informação (note que não foram exibidas informações sobre as demais cédulas): 1 
 nota(s) de R$ 10. 1 nota(s) de R$ 5. 3 nota(s) de R$ 1. */
+
+function withdrawMoney (withdrawValue) {
+    let amount100 = 0;
+    let amount50 = 0;
+    let amount10 = 0;
+    let amount5 = 0;
+    let amount1 = 0;
+    let ceduleValue = calculatedAmount(withdrawValue);
+    while (withdrawValue >= ceduleValue) {
+        switch (ceduleValue) {
+            case 100:
+                withdrawValue -= 100
+                amount100++
+                break
+            case 50:
+                withdrawValue -= 50
+                amount50++
+                break
+            case 10:
+                withdrawValue -= 10
+                amount10++
+                break
+            case 5:
+                withdrawValue -= 5
+                amount5++
+                break
+            case 1:
+                withdrawValue -= 1
+                amount1++
+                break
+        }
+
+        ceduleValue = calculatedAmount(withdrawValue);
+
+    }
+
+    return totalAmount (amount100, amount50, amount10, amount5, amount1);
+
+}
+
+function calculatedAmount(withdrawValue) {
+    if (withdrawValue >= 100) {
+        return 100
+    } else if (withdrawValue >= 50) {
+        return 50
+    } else if (withdrawValue >= 10) {
+        return 10
+    } else if (withdrawValue >= 5) {
+        return 5
+    } else if (withdrawValue >= 1) {
+        return 1
+    }
+}
+
+function totalAmount (amount100, amount50, amount10, amount5, amount1) {
+    let total = ''
+
+    if (amount100 > 0) {
+        total += `${amount100} cedule(s) of $100.`
+    }
+
+    if (amount50 > 0) {
+        total += `${amount50} cedule(s) of $50.`
+    }
+
+    if (amount10 > 0) {
+        total += `${amount10} cedule(s) of $10.`
+    }
+
+    if (amount1 > 0) {
+        total += `${amount1} cedule(s) of $1.`
+    }
+
+    return total;
+
+}
+
+console.log(withdrawMoney(500))
