@@ -467,6 +467,10 @@ function totalAmount (amount100, amount50, amount10, amount5, amount1) {
         total += `${amount10} cedule(s) of $10.`
     }
 
+    if (amount5 > 0) {
+        total += `${amount5} cedule(s) of $5.`
+    }
+
     if (amount1 > 0) {
         total += `${amount1} cedule(s) of $1.`
     }
@@ -475,4 +479,82 @@ function totalAmount (amount100, amount50, amount10, amount5, amount1) {
 
 }
 
-console.log(withdrawMoney(500))
+console.log(withdrawMoney(521))
+
+//fixando o exercicio 20
+
+function caixaEletronico(valorSaque) {
+    let nota100 = 0;
+    let nota50 = 0;
+    let nota10 = 0;
+    let nota5 = 0;
+    let nota1 = 0;
+    let totalNotas = montanteNotas(valorSaque);
+    while (valorSaque >= totalNotas) {
+        switch(totalNotas) {
+            case 100:
+                valorSaque -= 100;
+                nota100++
+                break
+            case 50:
+                valorSaque -= 50;
+                nota50++
+                break
+            case 10:
+                valorSaque -= 10;
+                nota10++
+                break
+            case 5:
+                valorSaque -= 5;
+                nota5++
+                break
+            case 1:
+                valorSaque -= 1;
+                nota1++
+                break
+        }
+        totalNotas = montanteNotas(valorSaque);
+    }
+    return quantidadeNotas (nota100, nota50, nota10, nota5, nota1);
+}
+
+function montanteNotas(valorSaque) {
+    if (valorSaque >= 100) {
+        return 100
+    } else if (valorSaque >= 50) {
+        return 50
+    } else if (valorSaque >= 10) {
+        return 10
+    } else if (valorSaque >= 5) {
+        return 5
+    } else if (valorSaque >= 1) {
+        return 1
+    }
+}
+
+function quantidadeNotas (nota100, nota50, nota10, nota5, nota1) {
+    let notasAreceber = ''
+    if (nota100 > 0) {
+        notasAreceber += `${nota100} nota(s) de 100R$.`
+    }
+
+    if (nota50 > 0) {
+        notasAreceber += `${nota50} nota(s) de 50R$.`
+    }
+
+    if (nota10 > 0) {
+        notasAreceber += `${nota10} nota(s) de 10R$.`
+    }
+
+    if (nota5 > 0) {
+        notasAreceber += `${nota5} nota(s) de 5R$.`
+    }
+
+    if (nota1 > 0) {
+        notasAreceber += `${nota1} nota(s) de 1R$.`
+    }
+
+    return notasAreceber;
+}
+
+console.log(caixaEletronico(948));
