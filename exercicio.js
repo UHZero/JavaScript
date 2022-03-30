@@ -557,4 +557,4 @@ function quantidadeNotas (nota100, nota50, nota10, nota5, nota1) {
     return notasAreceber;
 }
 
-console.log(caixaEletronico(948));
+console.log(caixaEletronico(948)); 
