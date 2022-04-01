@@ -558,3 +558,48 @@ function quantidadeNotas (nota100, nota50, nota10, nota5, nota1) {
 }
 
 console.log(caixaEletronico(948)); 
+
+/*  21)Criar um programa para identificar o valor a ser pago por um plano de saúde dada a idade do conveniado 
+considerando que todos pagam R$ 100 mais um adicional conforme a seguinte tabela: 1) crianças com menos 
+de 10 anos pagam R$80; 2) conveniados com idade entre 10 e 30 anos pagam R$50; 3) conveniados com 
+idade acima de  30 e até 60 anos pagam R$ 95; e 4) conveniados acima de 60 anos pagam R$130  */
+
+const planoSaude = (idade) => {
+    let idadeMenorQue10 = 80;
+    let idadeEntre10e30 = 50;
+    let idadeMaisQue30ate60 = 95;
+    let idadeMaiorQue60 = 130;
+    
+    if(idade < 10) {
+        return `O valor a ser pago é ${(100 + idadeMenorQue10).toFixed(2).replace('.', ',')}R$.`
+    } else if(idade >= 10 && idade <= 30) {
+        return `O valor a ser pago é ${(100 + idadeEntre10e30).toFixed(2).replace('.', ',')}R$.`
+    } else if(idade > 30 && idade <= 60) {
+        return `O valor a ser pago é ${(100 + idadeMaisQue30ate60).toFixed(2).replace('.', ',')}R$.`
+    } else if(idade > 60) {
+        return `O valor a ser pago é ${(100 + idadeMaiorQue60).toFixed(2).replace('.', ',')}R$.`
+    }else {
+        return 'valor inválido!'
+    }
+}
+
+console.log(planoSaude(8));
+console.log(planoSaude(22));
+console.log(planoSaude(34));
+console.log(planoSaude(66));
+console.log(planoSaude('string'));
+
+/*  22)​ Criar uma função para calcular o valor a ser pago de anuidade de uma associação. A função recebe como 
+parâmetro um inteiro que representa o mês (1 - janeiro, 2 - fevereiro...) que foi paga e o valor da anuidade. A 
+anuidade deve ser paga no mês de janeiro. Por mês, é cobrado 5% de juros (sob o regime de juros 
+compostos). O retorno deve ser o valor a ser pago para o respectivo mês escolhido. */
+
+const anuidadeAssociacao = (mes, valor) => {
+    if(mes > 0 && mes <=12) {
+        atraso = mes - 1
+        return `Valor da anuidade: ${(valor * ((1 + 0.05)**atraso)).toFixed(2).replace('.', ',')}R$.`
+    }else {
+        return 'Mês inválido'
+    }
+}
+console.log(anuidadeAssociacao(10, 99.80))
