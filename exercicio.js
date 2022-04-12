@@ -178,13 +178,13 @@ Partindo daí elabore uma função que recebe um ano e calcula se ele é ano bis
 const bissexto = function (anoAtual) {
     if (anoAtual <= 0) {
         return false
-    }else if (anoAtual % 400 == 0) {
+    } else if (anoAtual % 400 == 0) {
         return true
-    }else if (anoAtual % 100 == 0) {
+    } else if (anoAtual % 100 == 0) {
         return false
-    }else if (anoAtual % 4 == 0) {
+    } else if (anoAtual % 4 == 0) {
         return true
-    }else {
+    } else {
         return false
     }
 }
@@ -200,7 +200,7 @@ console.log(bissexto(2020))
 const fatorialN = (fator) => {
     if (fator == 0) {
         return 1
-    }else {
+    } else {
         return fator * fatorialN(fator - 1)
     }
 }
@@ -218,11 +218,11 @@ const diaUtil = (dia) => {
         case 1:
             console.log(`domingo - fim de semana`)
             break
-    case 2: case 3: case 4: case 5: case 6:
-        console.log(`${dia}° feira - dia útil`)
-        break
-    default:
-        console.log('dia inválido')
+        case 2: case 3: case 4: case 5: case 6:
+            console.log(`${dia}° feira - dia útil`)
+            break
+        default:
+            console.log('dia inválido')
     }
 }
 
@@ -336,7 +336,7 @@ console.log(planoSalarial('planoC', 1350));
 switch. Crie um case default que escreva ‘Número fora do intervalo.’ */
 
 const runNumber = (numberToString) => {
-    switch(numberToString){
+    switch (numberToString) {
         case 0: return 'Zero'
         case 1: return 'One'
         case 2: return 'Two'
@@ -375,7 +375,7 @@ const cardapioLanchonete = (codigoItem, quantidadeItem) => {
     let Bauru = 7.50;
     let Refrigerante = 3.50;
     let Suco = 2.80;
-    switch(codigoItem) {
+    switch (codigoItem) {
         case 100: return `Item(s) do pedido: Cachorro-quente, Total: ${(CachorroQuente * quantidadeItem).toFixed(2).replace('.', ',')}R$.`
         case 200: return `Item(s) do pedido: Hamburguer-Simples, Total: ${(HamburguerSimples * quantidadeItem).toFixed(2).replace('.', ',')}R$.`
         case 300: return `Item(s) do pedido: Cheeseburguer, Total: ${(Cheeseburguer * quantidadeItem).toFixed(2).replace('.', ',')}R$.`
@@ -399,7 +399,7 @@ Seu programa deve mostrar apenas as notas utilizadas. Por exemplo, ao solicitar 
 informar apenas a seguinte informação (note que não foram exibidas informações sobre as demais cédulas): 1 
 nota(s) de R$ 10. 1 nota(s) de R$ 5. 3 nota(s) de R$ 1. */
 
-function withdrawMoney (withdrawValue) {
+function withdrawMoney(withdrawValue) {
     let amount100 = 0;
     let amount50 = 0;
     let amount10 = 0;
@@ -434,7 +434,7 @@ function withdrawMoney (withdrawValue) {
 
     }
 
-    return totalAmount (amount100, amount50, amount10, amount5, amount1);
+    return totalAmount(amount100, amount50, amount10, amount5, amount1);
 
 }
 
@@ -452,7 +452,7 @@ function calculatedAmount(withdrawValue) {
     }
 }
 
-function totalAmount (amount100, amount50, amount10, amount5, amount1) {
+function totalAmount(amount100, amount50, amount10, amount5, amount1) {
     let total = ''
 
     if (amount100 > 0) {
@@ -491,7 +491,7 @@ function caixaEletronico(valorSaque) {
     let nota1 = 0;
     let totalNotas = montanteNotas(valorSaque);
     while (valorSaque >= totalNotas) {
-        switch(totalNotas) {
+        switch (totalNotas) {
             case 100:
                 valorSaque -= 100;
                 nota100++
@@ -515,7 +515,7 @@ function caixaEletronico(valorSaque) {
         }
         totalNotas = montanteNotas(valorSaque);
     }
-    return quantidadeNotas (nota100, nota50, nota10, nota5, nota1);
+    return quantidadeNotas(nota100, nota50, nota10, nota5, nota1);
 }
 
 function montanteNotas(valorSaque) {
@@ -532,7 +532,7 @@ function montanteNotas(valorSaque) {
     }
 }
 
-function quantidadeNotas (nota100, nota50, nota10, nota5, nota1) {
+function quantidadeNotas(nota100, nota50, nota10, nota5, nota1) {
     let notasAreceber = ''
     if (nota100 > 0) {
         notasAreceber += `${nota100} nota(s) de 100R$.`
@@ -557,7 +557,7 @@ function quantidadeNotas (nota100, nota50, nota10, nota5, nota1) {
     return notasAreceber;
 }
 
-console.log(caixaEletronico(948)); 
+console.log(caixaEletronico(948));
 
 /*  21)Criar um programa para identificar o valor a ser pago por um plano de saúde dada a idade do conveniado 
 considerando que todos pagam R$ 100 mais um adicional conforme a seguinte tabela: 1) crianças com menos 
@@ -569,16 +569,16 @@ const planoSaude = (idade) => {
     let idadeEntre10e30 = 50;
     let idadeMaisQue30ate60 = 95;
     let idadeMaiorQue60 = 130;
-    
-    if(idade < 10) {
+
+    if (idade < 10) {
         return `O valor a ser pago é ${(100 + idadeMenorQue10).toFixed(2).replace('.', ',')}R$.`
-    } else if(idade >= 10 && idade <= 30) {
+    } else if (idade >= 10 && idade <= 30) {
         return `O valor a ser pago é ${(100 + idadeEntre10e30).toFixed(2).replace('.', ',')}R$.`
-    } else if(idade > 30 && idade <= 60) {
+    } else if (idade > 30 && idade <= 60) {
         return `O valor a ser pago é ${(100 + idadeMaisQue30ate60).toFixed(2).replace('.', ',')}R$.`
-    } else if(idade > 60) {
+    } else if (idade > 60) {
         return `O valor a ser pago é ${(100 + idadeMaiorQue60).toFixed(2).replace('.', ',')}R$.`
-    }else {
+    } else {
         return 'valor inválido!'
     }
 }
@@ -595,11 +595,125 @@ anuidade deve ser paga no mês de janeiro. Por mês, é cobrado 5% de juros (sob
 compostos). O retorno deve ser o valor a ser pago para o respectivo mês escolhido. */
 
 const anuidadeAssociacao = (mes, valor) => {
-    if(mes > 0 && mes <=12) {
+    if (mes > 0 && mes <= 12) {
         atraso = mes - 1
-        return `Valor da anuidade: ${(valor * ((1 + 0.05)**atraso)).toFixed(2).replace('.', ',')}R$.`
-    }else {
+        return `Valor da anuidade: ${(valor * ((1 + 0.05) ** atraso)).toFixed(2).replace('.', ',')}R$.`
+    } else {
         return 'Mês inválido'
     }
 }
 console.log(anuidadeAssociacao(10, 99.80))
+
+/* 23)​ Escreva um algoritmo que leia o código de um aluno e suas três notas. Calcule a média ponderada do 
+aluno, considerando que o peso para a maior nota seja 4 e para as duas restantes, 3. Mostre o código do 
+aluno, suas três notas, a média calculada e uma mensagem "APROVADO" se a média for maior ou igual a 5 e 
+"REPROVADO" se a média for menor que 5. Repita a operação até que o código lido seja negativo.  */
+
+const mediaPonderada = (codAluno, nota1, nota2, nota3) => {
+    let notasAluno = [];
+    notasAluno.push(nota1);
+    notasAluno.push(nota2);
+    notasAluno.push(nota3);
+    notasAluno.sort()
+    console.log(notasAluno)
+    let notasMedia = ((notasAluno[2] * 4) + (notasAluno[1] * 3) + (notasAluno[0] * 3)) / 10;
+
+    console.log(`Código do Aluno: ${codAluno}. Notas: ${nota1}, ${nota2}, ${nota3}. Média Final: ${notasMedia.toFixed(2)}, ${notasMedia < 5 ? 'Reprovado!' : 'Aprovado!'}`)
+}
+mediaPonderada(123, 7.8, 3.9, 5.9)
+mediaPonderada(123, 6, 3.9, 5)
+
+/* 24) Crie um programa que imprima 11 vezes a frase " Hello World!" utilizando uma estrutura de repetição while. */
+
+function helloWorld() {
+    let i = 0;
+    while (i < 11) {
+        console.log(i + 1, 'Hello World!')
+        i++
+    }
+}
+helloWorld()
+
+/* 25) ​Escrever um programa para exibir os números de 1 até 50 na tela. */
+
+const deUmAteCinquenta = () => {
+    let i = 0;
+    while (i < 50) {
+        console.log('N°:', i + 1)
+        i++;
+    }
+}
+deUmAteCinquenta()
+
+/* 26)​ Fazer um programa para encontrar todos os pares entre 1 e 100.  */
+
+const acharPar = () => {
+    console.log('acharPar usando while/if/else')
+    let i = 0
+    while (i < 100) {
+        i++
+        if (i % 2 === 0) {
+            console.log(i, 'Par')
+        } else {
+            console.log(i, 'Impar')
+        }
+    }
+}
+acharPar()
+
+const funcaoPar = () => {
+    console.log('funcaoPar usando while')
+    let i = 0;
+    while (i <= 100) {
+        console.log( 'N°:', i, i++ % 2 == 0 ? 'Par' : 'Impar')
+    }
+}
+funcaoPar()
+
+/* 27)​ Construa uma função que receba como parâmetros as alturas e as taxas de crescimento anuais de duas 
+crianças e calcule se existe uma criança menor, caso exista se a criança menor ultrapassará a maior e em 
+quantos anos isso acontecerá. Utilize centímetros para as unidades de medida */
+function comparaAlturas(altura1, taxa1, altura2, taxa2) {
+    let tempo = 0;
+    if (altura1 == altura2) {
+        if (taxa1 > taxa2) {
+            console.log(`Criança 1 passará a Criança 2 em 1 ano.`);
+        } else if (taxa1 < taxa2) {
+            console.log(`Criança 2 passará a Criança 1 em 1 ano.`);
+        } else {
+            console.log("As duas crianças possuem a mesma altura");
+        }
+    } else if (altura1 < altura2) {
+        console.log(`Criança 1 com ${altura1} cm`);
+        console.log(`Criança 2 com ${altura2} cm`);
+        while (altura1 < altura2) {
+            altura1 = altura1 + altura1 * taxa1;
+            altura2 = altura2 + altura2 * taxa2;
+            tempo++;
+        }
+        console.log(`Criança 1 passou a Criança 2 em ${tempo} ano(s).`);
+        console.log(`Criança 1 com ${altura1} cm`);
+        console.log(`Criança 2 com ${altura2} cm`);
+    } else {
+        console.log(`Criança 1 com ${altura1} cm`);
+        console.log(`Criança 2 com ${altura2} cm`);
+        while (altura1 > altura2) {
+            altura1 = altura1 + altura1 * taxa1;
+            altura2 = altura2 + altura2 * taxa2;
+            tempo++;
+        }
+        console.log(`Criança 2 passou a Criança 1 em ${tempo} ano(s).`);
+        console.log(`Criança 1 com ${altura1} cm`);
+        console.log(`Criança 2 com ${altura2} cm`);
+    }
+}
+
+comparaAlturas(50, 0.05, 50, 0.06);
+
+// nota exercicio 27 : não entendi porcaria alguma, estudar e tentar resolver sozinho  
+
+/* 28) Ler um vetor de números inteiros e imprimir quantos são pares e quantos são ímpares. */
+
+let vetor = [333, 432, 2113, 121, 36]
+const resultante = vetor.map(function(e){if(e % 2 == 0){return 'Par'}else{return 'Impar'}})
+console.log(resultante)

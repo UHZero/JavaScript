@@ -22,8 +22,8 @@ botao.addEventListener('click', e =>{
             const resultado = [];
             resultado.push(x1)
             resultado.push(x2)
-
             return resultado
+            
     }
     let tarefa = bhaskara(variavelA,variavelB,variavelC)
     document.getElementById('resultado').innerHTML = tarefa;
