@@ -717,3 +717,32 @@ comparaAlturas(50, 0.05, 50, 0.06);
 let vetor = [333, 432, 2113, 121, 36]
 const resultante = vetor.map(function(e){if(e % 2 == 0){return 'Par'}else{return 'Impar'}})
 console.log(resultante)
+
+/* 29) ​Utilizando a estrutura de repetição for, faça uma função que percorra um vetor e conte quantos números 
+deste vetor estão no intervalo [10,20] (repare que o intervalo é fechado, ou seja, inclui o 10 e o 20) e quantos 
+deles estão fora do intervalo, escrevendo estas informações. */
+
+const achaIntervalo = (vetorDado) => {
+    let foundInterval = [];
+    let notFound = [];
+    for(let i = 0; i < vetorDado.length; i++){
+        if(vetorDado[i] >=10 & vetorDado[i] <= 20){
+            foundInterval.push(vetorDado[i])
+        }else{
+            notFound.push(vetorDado[i])
+        }
+    }
+    console.log(`Dentro do Intervalo: ${foundInterval}, Fora do Intervalo: ${notFound}`)
+}
+
+let vetorQualquer = [4, 6, 9, 22, 16, 11, 20, 15, 21];
+
+
+achaIntervalo(vetorQualquer)
+
+/* 30) Escreva um algoritmo que percorre um vetor de inteiros e defina o maior e menor valor dentro do vetor. */
+const numeroMaior = [9, 4, 1, 2, 7];
+const pontaMaior = (a, b) => a > b ? a : b
+const pontaMenor = (a, b) => a < b ? a : b
+const acheAsPontas = (umArray) => `Maior N°: ${umArray.reduce(pontaMaior)}, Menor N°: ${umArray.reduce(pontaMenor)}`
+console.log(acheAsPontas(numeroMaior))
