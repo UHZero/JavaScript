@@ -665,7 +665,7 @@ const funcaoPar = () => {
     console.log('funcaoPar usando while')
     let i = 0;
     while (i <= 100) {
-        console.log( 'N°:', i, i++ % 2 == 0 ? 'Par' : 'Impar')
+        console.log('N°:', i, i++ % 2 == 0 ? 'Par' : 'Impar')
     }
 }
 funcaoPar()
@@ -715,7 +715,7 @@ comparaAlturas(50, 0.05, 50, 0.06);
 /* 28) Ler um vetor de números inteiros e imprimir quantos são pares e quantos são ímpares. */
 
 let vetor = [333, 432, 2113, 121, 36]
-const resultante = vetor.map(function(e){if(e % 2 == 0){return 'Par'}else{return 'Impar'}})
+const resultante = vetor.map(function (e) { if (e % 2 == 0) { return 'Par' } else { return 'Impar' } })
 console.log(resultante)
 
 /* 29) ​Utilizando a estrutura de repetição for, faça uma função que percorra um vetor e conte quantos números 
@@ -725,10 +725,10 @@ deles estão fora do intervalo, escrevendo estas informações. */
 const achaIntervalo = (vetorDado) => {
     let foundInterval = [];
     let notFound = [];
-    for(let i = 0; i < vetorDado.length; i++){
-        if(vetorDado[i] >=10 & vetorDado[i] <= 20){
+    for (let i = 0; i < vetorDado.length; i++) {
+        if (vetorDado[i] >= 10 & vetorDado[i] <= 20) {
             foundInterval.push(vetorDado[i])
-        }else{
+        } else {
             notFound.push(vetorDado[i])
         }
     }
@@ -753,8 +753,8 @@ const vetorPossiveisNegativos = [0, 9, -5, 6, -3, 8, -8, 2, 4];
 
 const contaNegativos = (e) => {
     let elementoNegativo = [];
-    for(let i = 0; i < e.length; i++) {
-        if(e[i] < 0){
+    for (let i = 0; i < e.length; i++) {
+        if (e[i] < 0) {
             elementoNegativo.push(e[i])
         }
     }
@@ -784,9 +784,33 @@ console.log(uniaoArray(vetorInteiro, vetorFloatNumber, vetorString))
 /* 34)​ Construa uma função que receberá duas Strings de tamanhos variados e que retornará True ou False caso 
 todos os caracteres (independentemente de ser maiúsculo ou minúsculo) estejam contidos em ambas palavras.*/
 const texto1 = 'abc'
-const texto2 = 'abc'
-const match1 = texto2.match(/\w/gi)
-const match2 = texto1.match(/\w/gi)
-console.log(match1 == match2)
-const foundTxt = (string1, string2) => string1 == string2 ? true : false
-console.log(foundTxt(match1, match2))
+const texto2 = 'adc'
+const detectorCaractere = (txt1, txt2) => {
+    let caractereContido = true;
+    for (let i = 0; i < txt1.length; i++) {
+        let capturaCaractere1 = txt1.charAt(i).toLowerCase()
+        //console.log(capturaCaractere1)
+        for (let z = 0; z < txt2.length; z++) {
+            let capturaCaractere2 = txt2.charAt(z).toLowerCase()
+            //console.log(capturaCaractere2)
+            if(capturaCaractere1 == capturaCaractere2){
+                caractereContido = true
+                break
+            }else {
+                caractereContido = false
+            }
+        }
+        if(!caractereContido){
+            return caractereContido
+        }  
+    }
+    return caractereContido
+}
+console.log(detectorCaractere(texto1, texto2))
+
+// sinceramente não entendi lhufas !!! 
+
+/* 35) ​Crie dois vetores chamados vetorPilha e vetorAdiciona. Inicialmente, o vetorPilha conterá cinco elementos 
+inteiros: [1, 2, 3, 4, 5]. Você deverá adicionar os valores contidos no vetorAdiciona [6, 7, 8, 9, 10] ao vetor pilha 
+e mostrá-los no console. É importante lembrar que o método Push retorna somente o tamanho do Vetor. Ao 
+final das operações imprima os vetores no console.   */
