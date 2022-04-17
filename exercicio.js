@@ -741,8 +741,52 @@ let vetorQualquer = [4, 6, 9, 22, 16, 11, 20, 15, 21];
 achaIntervalo(vetorQualquer)
 
 /* 30) Escreva um algoritmo que percorre um vetor de inteiros e defina o maior e menor valor dentro do vetor. */
-const numeroMaior = [9, 4, 1, 2, 7];
+const vetorNumerico = [9, 4, 1, 2, 7];
 const pontaMaior = (a, b) => a > b ? a : b
 const pontaMenor = (a, b) => a < b ? a : b
 const acheAsPontas = (umArray) => `Maior N°: ${umArray.reduce(pontaMaior)}, Menor N°: ${umArray.reduce(pontaMenor)}`
-console.log(acheAsPontas(numeroMaior))
+console.log(acheAsPontas(vetorNumerico))
+
+/* 31) ​Escrever um algoritmo que percorre um vetor de inteiros, conta quantos números negativos há nesse vetor 
+e imprime a quantidade no console. */
+const vetorPossiveisNegativos = [0, 9, -5, 6, -3, 8, -8, 2, 4];
+
+const contaNegativos = (e) => {
+    let elementoNegativo = [];
+    for(let i = 0; i < e.length; i++) {
+        if(e[i] < 0){
+            elementoNegativo.push(e[i])
+        }
+    }
+    return `Elementos Negativos: ${elementoNegativo}, Total de Negativos: ${elementoNegativo.length}`
+}
+console.log(contaNegativos(vetorPossiveisNegativos));
+
+/* 32)​ Construir um algoritmo que calcule a média aritmética dos valores de um vetor de inteiros.  */
+const vetorMedia = [9.8, 5.9, 7.7, 3.1];
+const somaVet = (a, b) => a + b;
+const mediaCalc = (e) => (e.reduce(somaVet) / e.length).toFixed(2)
+console.log(mediaCalc(vetorMedia))
+
+/* 33) ​Crie três vetores, chamados vetorInteiro, vetorString e vetorDouble. Cada um destes vetores deverá conter 
+quatro valores, sendo o primeiro com valores inteiros, o segundo com strings e o terceiro com valores decimais. 
+Declarados os vetores, utilize a função de união concat() de duas maneiras diferentes para unir os vetores, e 
+mostre o resultado no console. Todos os elementos do vetor resultado deverão aparecer no console. */
+const vetorInteiro = [1, 2, 3, 4, 5, 6];
+const vetorString = ['Uma', 'String', 'Qualquer'];
+const vetorFloatNumber = [5.59, 4.90, 6.66];
+const uniaoVetores = vetorString.concat(vetorInteiro, vetorFloatNumber);
+console.log(uniaoVetores)
+
+const uniaoArray = (vetor1, vetor2, vetor3) => vetor1.concat(vetor2, vetor3);
+console.log(uniaoArray(vetorInteiro, vetorFloatNumber, vetorString))
+
+/* 34)​ Construa uma função que receberá duas Strings de tamanhos variados e que retornará True ou False caso 
+todos os caracteres (independentemente de ser maiúsculo ou minúsculo) estejam contidos em ambas palavras.*/
+const texto1 = 'abc'
+const texto2 = 'abc'
+const match1 = texto2.match(/\w/gi)
+const match2 = texto1.match(/\w/gi)
+console.log(match1 == match2)
+const foundTxt = (string1, string2) => string1 == string2 ? true : false
+console.log(foundTxt(match1, match2))
