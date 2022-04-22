@@ -11,6 +11,7 @@ const funcao = function (x, y) {
 
 console.log(funcao(5, 5))
 
+console.log('------------------')
 /* 2) Crie uma função que recebe os comprimentos dos três lados de um triângulo e retorne sua classificação quanto
 ao tamanho de seus lados. */
 const calcTriangulo = function (a = 0, b = 0, c = 0) {
@@ -24,12 +25,14 @@ const calcTriangulo = function (a = 0, b = 0, c = 0) {
 }
 console.log(calcTriangulo(6, 4, 3))
 
+console.log('------------------')
 // 3) Crie uma função que recebe dois parâmetros, base e expoente, e retorne a base elevada ao expoente.
 const baseExp = function (base, expoente) {
     return base ** expoente
 }
 console.log(baseExp(5, 5))
 
+console.log('------------------')
 /* 04) Crie uma função que irá receber dois valores, o dividendo e o divisor. A função deverá imprimir o resultado
 e o resto da divisão destes dois valores.*/
 const divRest = function (dividendo, divisor) {
@@ -40,6 +43,7 @@ const divRest = function (dividendo, divisor) {
 }
 console.log(divRest(100, 3))
 
+console.log('------------------')
 /* 5) Desenvolva uma função JavaScript para
 que ela receba um valor como 0.30000000000000004 e retorne R$0,30 (observe a vírgula e o ponto).*/
 const boolFix = function (setValue) {
@@ -48,6 +52,7 @@ const boolFix = function (setValue) {
 }
 boolFix(0.1 + 0.2) //tive que olhar a resposta, ESRUDAR MAIS ESSE TIPO DE SITUAÇÃO
 
+console.log('------------------')
 /*06) Elabore duas funções que recebem três parâmetros: capital inicial, taxa de juros e tempo de aplicação. A
 primeira função retornará o montante da aplicação financeira sob o regime de juros simples e a segunda
 retornará o valor da aplicação sob o regime de juros compostos. */
@@ -69,6 +74,7 @@ function jurosCompostos(capitalInicial, taxa, tempo) {
     return capitalInicial * (1 + taxa) ** tempo
 }
 
+console.log('------------------')
 /* 7) Uma das vantagens da programação é a automatização de tarefas que não gostamos de realizar. Dito isto,
 elabore uma função cujo objetivo é resolver a fórmula de Bhaskara. Para isso, sua função deve receber três
 parâmetros, “ax2”, “bx” e “c”, de tal modo que na equação: 3x² - 5x + 12 os valores seriam respectivamente: 3,
@@ -91,6 +97,7 @@ const bhaskara = function (ax2, bx, c) {
 console.log(bhaskara(1, 3, 2))
 console.log(bhaskara(3, 1, 2))
 
+console.log('------------------')
 /* 08) Pedro joga N jogos de basquete por temporada. Para saber como está ele está progredindo, ele mantém
 registro de todos os as pontuações feitas por jogo. Após cada jogo ele anota no novo valor e confere se o
 mesmo é maior ou menor que seu melhor e pior desempenho. Dada uma lista string = “pontuação1 pontuação2
@@ -126,6 +133,7 @@ function analiseDePontuacao(stringPontuacoes) {
 
 console.log(analiseDePontuacao(stringPontuacoes))
 
+console.log('------------------')
 /* 9)  Construa uma função para um sistema de notas de uma instituição que possui a seguinte política de 
 classificação: Todo aluno recebe uma nota de 0 a 100. Alunos com nota abaixo de 40 são reprovados. As notas 
 possuem a seguinte regra de arredondamento: Se a diferença entre a nota e o próximo múltiplo de 5 for menor 
@@ -152,6 +160,7 @@ AprovacaoSis(38)
 AprovacaoSis(25)
 // descobrir como adaptar para valor invalido caso o usuario insira uma letra ou string no lugar de number
 
+console.log('------------------')
 /* 10) ​Crie uma função que verifica se um número inteiro passado como parêmetro é divisível por 3 e retorne true 
 ou false. */
 
@@ -166,6 +175,7 @@ const divisivelPorTres = (inteiro) => {
 console.log(divisivelPorTres(4))
 console.log(divisivelPorTres(9))
 
+console.log('------------------')
 /* 11) ​As regras para o cálculo dos anos bissextos são as seguintes: 
 De 4 em 4 anos é ano bissexto; 
 De 100 em 100 anos não é ano bissexto; 
@@ -207,6 +217,7 @@ const fatorialN = (fator) => {
 
 console.log(fatorialN(10))
 
+console.log('------------------')
 /* 13) ​Crie um programa que exibe se um dia é dia útil, fim de semana ou dia inválido dado o número referente ao 
 dia. Considere que domingo é o dia 1 e sábado é o dia 7. Utilize a estrutura Switch.  */
 
@@ -232,6 +243,7 @@ diaUtil(3)
 diaUtil(8)
 diaUtil('sabado')
 
+console.log('------------------')
 /* 14) ​Crie uma estrutura condicional switch que receba uma string com o nome de uma fruta e que possua três 
 casos: Caso maçã, retorne no console: “Não vendemos esta fruta aqui”. Caso kiwi, retorne: “Estamos com escassez de kiwis”. Caso melancia, retorne: “Aqui está, são 3 reais o quilo”. Teste com estas três opções .Crie 
 também um default, que retornará uma mensagem de erro no console */
@@ -257,6 +269,7 @@ quitanda('kiwi')
 quitanda('melancia')
 quitanda('maça')
 
+console.log('------------------')
 /* 15) ​Um homem decidiu ir à uma revenda comprar um carro. Ele deseja comprar um carro hatch, e a revenda 
 possui, além de carros hatch, sedans, motocicletas e caminhonetes. Utilizando uma estrutura switch, caso o 
 comprador queira o hatch, retorne: “Compra efetuada com sucesso”. Nas outras opções, retorne: “Tem certeza 
@@ -282,6 +295,7 @@ revendaCarro('motocicletas')
 revendaCarro('caminhonetes')
 revendaCarro('carroX')
 
+console.log('------------------')
 /* 16)​ Utilizando a estrutura do Switch faça um programa que simule uma calculadora básicaO programa recebe 
 como parâmetros dois valores numéricos e uma string referente à operação e a realize com os valores 
 numéricos na ordem que foram inseridos. Por exemplo: calculadora (2, ‘+’, 3). A função efetuará a soma de 2 e 
@@ -311,6 +325,7 @@ console.log(calcSwitch('divisao', 2, 4))
 console.log(calcSwitch('expoente', 2, 4))
 console.log(calcSwitch('arroz', 2, 4))
 
+console.log('------------------')
 /* 17)​ Um funcionário irá receber um aumento de acordo com o seu plano de 
 trabalho, de acordo com a tabela abaixo: Plano A = 10%, Plano B = 15%, Plano C = 20%, ​ Um funcionário irá receber um aumento de acordo com o seu plano de trabalho, de acordo com a tabela abaixo: */
 
@@ -332,6 +347,7 @@ console.log(planoSalarial('planoA', 1350));
 console.log(planoSalarial('planoB', 1350));
 console.log(planoSalarial('planoC', 1350));
 
+console.log('------------------')
 /* 18) Faça um programa que leia um número entre 0 e 10, e escreva este número por extenso. Use o comando 
 switch. Crie um case default que escreva ‘Número fora do intervalo.’ */
 
@@ -365,6 +381,7 @@ console.log(runNumber(9));
 console.log(runNumber(10));
 console.log(runNumber(11));
 
+console.log('------------------')
 /*  ​19) Implemente uma  função que receba como parâmetros o código do item pedido, a quantidade e calcule o valor 
 a ser pago por aquele lanche. Considere que a cada execução somente será calculado um item. Use o 
 comando switch. Crie um caso default para produto não existente.  */
@@ -393,6 +410,7 @@ console.log(cardapioLanchonete(500, 1));
 console.log(cardapioLanchonete(600, 4));
 console.log(cardapioLanchonete(700, 1));
 
+console.log('------------------')
 /*  20)​ Crie um programa para informar quais e quantas notas são necessárias para entregar o mínimo de cédulas 
 para um determinado valor informado pelo usuário considerando notas de R$ 100, R$ 50, R$ 10 e R$ 5 e R$ 1. 
 Seu programa deve mostrar apenas as notas utilizadas. Por exemplo, ao solicitar R$18, o programa deve 
@@ -559,6 +577,7 @@ function quantidadeNotas(nota100, nota50, nota10, nota5, nota1) {
 
 console.log(caixaEletronico(948));
 
+console.log('------------------')
 /*  21)Criar um programa para identificar o valor a ser pago por um plano de saúde dada a idade do conveniado 
 considerando que todos pagam R$ 100 mais um adicional conforme a seguinte tabela: 1) crianças com menos 
 de 10 anos pagam R$80; 2) conveniados com idade entre 10 e 30 anos pagam R$50; 3) conveniados com 
@@ -589,6 +608,7 @@ console.log(planoSaude(34));
 console.log(planoSaude(66));
 console.log(planoSaude('string'));
 
+console.log('------------------')
 /*  22)​ Criar uma função para calcular o valor a ser pago de anuidade de uma associação. A função recebe como 
 parâmetro um inteiro que representa o mês (1 - janeiro, 2 - fevereiro...) que foi paga e o valor da anuidade. A 
 anuidade deve ser paga no mês de janeiro. Por mês, é cobrado 5% de juros (sob o regime de juros 
@@ -604,6 +624,7 @@ const anuidadeAssociacao = (mes, valor) => {
 }
 console.log(anuidadeAssociacao(10, 99.80))
 
+console.log('------------------')
 /* 23)​ Escreva um algoritmo que leia o código de um aluno e suas três notas. Calcule a média ponderada do 
 aluno, considerando que o peso para a maior nota seja 4 e para as duas restantes, 3. Mostre o código do 
 aluno, suas três notas, a média calculada e uma mensagem "APROVADO" se a média for maior ou igual a 5 e 
@@ -623,6 +644,7 @@ const mediaPonderada = (codAluno, nota1, nota2, nota3) => {
 mediaPonderada(123, 7.8, 3.9, 5.9)
 mediaPonderada(123, 6, 3.9, 5)
 
+console.log('------------------')
 /* 24) Crie um programa que imprima 11 vezes a frase " Hello World!" utilizando uma estrutura de repetição while. */
 
 function helloWorld() {
@@ -634,6 +656,7 @@ function helloWorld() {
 }
 helloWorld()
 
+console.log('------------------')
 /* 25) ​Escrever um programa para exibir os números de 1 até 50 na tela. */
 
 const deUmAteCinquenta = () => {
@@ -645,6 +668,7 @@ const deUmAteCinquenta = () => {
 }
 deUmAteCinquenta()
 
+console.log('------------------')
 /* 26)​ Fazer um programa para encontrar todos os pares entre 1 e 100.  */
 
 const acharPar = () => {
@@ -670,6 +694,7 @@ const funcaoPar = () => {
 }
 funcaoPar()
 
+console.log('------------------')
 /* 27)​ Construa uma função que receba como parâmetros as alturas e as taxas de crescimento anuais de duas 
 crianças e calcule se existe uma criança menor, caso exista se a criança menor ultrapassará a maior e em 
 quantos anos isso acontecerá. Utilize centímetros para as unidades de medida */
@@ -711,13 +736,14 @@ function comparaAlturas(altura1, taxa1, altura2, taxa2) {
 comparaAlturas(50, 0.05, 50, 0.06);
 
 // nota exercicio 27 : não entendi porcaria alguma, estudar e tentar resolver sozinho  
-
+console.log('------------------')
 /* 28) Ler um vetor de números inteiros e imprimir quantos são pares e quantos são ímpares. */
 
 let vetor = [333, 432, 2113, 121, 36]
 const resultante = vetor.map(function (e) { if (e % 2 == 0) { return 'Par' } else { return 'Impar' } })
 console.log(resultante)
 
+console.log('------------------')
 /* 29) ​Utilizando a estrutura de repetição for, faça uma função que percorra um vetor e conte quantos números 
 deste vetor estão no intervalo [10,20] (repare que o intervalo é fechado, ou seja, inclui o 10 e o 20) e quantos 
 deles estão fora do intervalo, escrevendo estas informações. */
@@ -740,6 +766,7 @@ let vetorQualquer = [4, 6, 9, 22, 16, 11, 20, 15, 21];
 
 achaIntervalo(vetorQualquer)
 
+console.log('------------------')
 /* 30) Escreva um algoritmo que percorre um vetor de inteiros e defina o maior e menor valor dentro do vetor. */
 const vetorNumerico = [9, 4, 1, 2, 7];
 const pontaMaior = (a, b) => a > b ? a : b
@@ -747,6 +774,7 @@ const pontaMenor = (a, b) => a < b ? a : b
 const acheAsPontas = (umArray) => `Maior N°: ${umArray.reduce(pontaMaior)}, Menor N°: ${umArray.reduce(pontaMenor)}`
 console.log(acheAsPontas(vetorNumerico))
 
+console.log('------------------')
 /* 31) ​Escrever um algoritmo que percorre um vetor de inteiros, conta quantos números negativos há nesse vetor 
 e imprime a quantidade no console. */
 const vetorPossiveisNegativos = [0, 9, -5, 6, -3, 8, -8, 2, 4];
@@ -762,12 +790,14 @@ const contaNegativos = (e) => {
 }
 console.log(contaNegativos(vetorPossiveisNegativos));
 
+console.log('------------------')
 /* 32)​ Construir um algoritmo que calcule a média aritmética dos valores de um vetor de inteiros.  */
 const vetorMedia = [9.8, 5.9, 7.7, 3.1];
 const somaVet = (a, b) => a + b;
 const mediaCalc = (e) => (e.reduce(somaVet) / e.length).toFixed(2)
 console.log(mediaCalc(vetorMedia))
 
+console.log('------------------')
 /* 33) ​Crie três vetores, chamados vetorInteiro, vetorString e vetorDouble. Cada um destes vetores deverá conter 
 quatro valores, sendo o primeiro com valores inteiros, o segundo com strings e o terceiro com valores decimais. 
 Declarados os vetores, utilize a função de união concat() de duas maneiras diferentes para unir os vetores, e 
@@ -781,6 +811,7 @@ console.log(uniaoVetores)
 const uniaoArray = (vetor1, vetor2, vetor3) => vetor1.concat(vetor2, vetor3);
 console.log(uniaoArray(vetorInteiro, vetorFloatNumber, vetorString))
 
+console.log('------------------')
 /* 34)​ Construa uma função que receberá duas Strings de tamanhos variados e que retornará True ou False caso 
 todos os caracteres (independentemente de ser maiúsculo ou minúsculo) estejam contidos em ambas palavras.*/
 const texto1 = 'abc'
@@ -793,24 +824,132 @@ const detectorCaractere = (txt1, txt2) => {
         for (let z = 0; z < txt2.length; z++) {
             let capturaCaractere2 = txt2.charAt(z).toLowerCase()
             //console.log(capturaCaractere2)
-            if(capturaCaractere1 == capturaCaractere2){
+            if (capturaCaractere1 == capturaCaractere2) {
                 caractereContido = true
                 break
-            }else {
+            } else {
                 caractereContido = false
             }
         }
-        if(!caractereContido){
+        if (!caractereContido) {
             return caractereContido
-        }  
+        }
     }
     return caractereContido
 }
 console.log(detectorCaractere(texto1, texto2))
 
 // sinceramente não entendi lhufas !!! 
-
+console.log('------------------')
 /* 35) ​Crie dois vetores chamados vetorPilha e vetorAdiciona. Inicialmente, o vetorPilha conterá cinco elementos 
 inteiros: [1, 2, 3, 4, 5]. Você deverá adicionar os valores contidos no vetorAdiciona [6, 7, 8, 9, 10] ao vetor pilha 
 e mostrá-los no console. É importante lembrar que o método Push retorna somente o tamanho do Vetor. Ao 
 final das operações imprima os vetores no console.   */
+const vetorPilha = [1, 2, 3, 4, 5];
+const vetorAdiciona = [6, 7, 8, 9, 10];
+const addicionaPilha = (a) => vetorPilha.push(a)
+const adicionandoX = (vetorX) => vetorX.map(addicionaPilha)
+adicionandoX(vetorAdiciona)
+console.log(vetorPilha, vetorAdiciona)
+
+console.log('------------------')
+/* 36) ​Crie duas funções que recebem dois parâmetros, um vetor com apenas valores numéricos e um número 
+inteiro. Faça com que a primeira função retorne outro vetor que será resultado da multiplicação de cada 
+elemento pelo número passado como parâmetro. A segunda função fará o mesmo da primeira se e somente se 
+o valor do elemento for maior que 5 */
+const vetorTeste1 = [6, 3]
+const primeiraMult = (vetorZ, Inteiro) => {
+    let newVetor = vetorZ.map((e) => e * Inteiro)
+    return newVetor
+}
+console.log(primeiraMult(vetorTeste1, 5))
+
+console.log('------------------')
+
+const vetorTeste2 = [3, 5, 7, 9]
+const segundaMult = (vetorZ, Inteiro) => {
+    let vetorW = vetorZ.filter((e) => e > 5)
+    let newVetor = vetorW.map((e) => e * Inteiro)
+    return newVetor
+}
+console.log(segundaMult(vetorTeste2, 2))
+
+console.log('------------------')
+/* 37) ​Escreva duas funções, uma para progressão aritmética e uma para progressão geométrica que recebam 
+como parâmetros um número n (número de termo), ​a1​ (o primeiro termo) e ​r​ (a razão) e escreva os ​n​ termos, bem como a soma dos elementos.  */
+
+const progAritimetica = (n, a1, r) => {
+    for (let i = 0; i < n; i++) {
+        console.log(a1 + r * i)
+    }
+    console.log('Soma: ', (n * (a1 + (a1 + (n - 1) * r))) / 2)
+}
+progAritimetica(10, 1, 1)
+
+console.log('------------------')
+
+const progGeometrica = (n, a1, r) => {
+    for (let i = 0; i < n; i++) {
+        console.log(a1 * (r ** i))
+    }
+    console.log(`Soma: ${((a1 * ((r ** n) - 1)) / (r - 1))}`)
+}
+
+progGeometrica(10, 2, 2)
+
+console.log('------------------')
+
+/* 38) ​Escreva uma função que receba dois parâmetros início e fim. Essa função deve imprimir todos os números ímpares que estão entre esses valores. Por padrão os valores devem ser 0 para início e 100 para fim. Atente para corrigir a ordem dos parâmetros caso a função receba o valor maior antes do menor. */
+const printImpar = (valueInit = 0, valueEnd = 100) => {
+    if (valueEnd >= valueInit) {
+        for (let i = valueInit; i <= valueEnd; i++) {
+            let resultado = i % 2 != 0
+            if (resultado === true) {
+                console.log(`${i} é ímpar`)
+            }
+        }
+    } else {
+        console.log('Parametro Invalido, valor final não pode ser maior que inicial!!!')
+    }
+}
+printImpar(10, 50)
+printImpar(60, 50)
+
+console.log('------------------')
+/* 39) ​Crie uma função que receba dois vetores de igual tamanho e troque seus elementos de modo que o 
+primeiro elemento do vetorA passe a ser o primeiro elemento do vetorB e vice versa e assim sucessivamente. Faça a troca sem utilizar uma variável auxiliar. */
+const trocaVetor = (vetorX, vetorY) => {
+    if (vetorX.length === vetorY.length) {
+        for (let i = 0; i < vetorX.length; i++) {
+            vetorX[i] = vetorX[i] + vetorY[i]
+            vetorY[i] = vetorX[i] - vetorY[i]
+            vetorX[i] = vetorX[i] - vetorY[i]
+        }
+    } else {
+        console.log('Vetores de Tamanhos diferentes!!!')
+    }
+    console.log(`Novo vetorX: ${vetorX}
+Novo vetorY: ${vetorY}`)
+}
+const vetorX = [9, 3, 7];
+const vetorY = [6, 3, 1];
+trocaVetor(vetorX, vetorY)
+
+/* 40) ​Faça uma função que receba como parâmetro um vetor de notas e mostre os conceitos de cada uma de 
+modo que de 0,0 a 4,9 seja atribuído o conceito D, de 5,0 a 6,9 seja atribuído o conceito C, de 7,0 a 8,9 o conceito B e de 9,0 a 10,0 o conceito A. */
+const conceitoABC = (e) => {
+    if (e >= 0 && e < 5) {
+        return `${e = 'D'}`
+    } else if (e >= 5 && e < 7) {
+        return `${e = 'C'}`
+    } else if (e >= 7 && e < 9) {
+        return `${e = 'B'}`
+    } else if (e >= 9 && e <= 10) {
+        return `${e = 'A'}`
+    } else {
+        return 'Insira uma nota entre 0 e 10!!!'
+    }
+}
+const notasConceito = [3, 6, 8, 10, 11]
+const resultado = (array) => console.log(array.map(conceitoABC))
+resultado(notasConceito)

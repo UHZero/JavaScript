@@ -13,7 +13,7 @@ function trocaValores(vetorA, vetorB) {
     console.log('Novo vetor B: ' + vetorB)
 }
 
-let vetorA = [1, 2, 3]
+let vetorA = [9, 2, 3]
 let vetorB = [4, 5, 6]
 
 trocaValores(vetorA, vetorB)
