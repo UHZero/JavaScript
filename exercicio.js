@@ -206,6 +206,7 @@ console.log(bissexto(2000))
 console.log(bissexto(2022))
 console.log(bissexto(2020))
 
+console.log('------------------')
 // 12)​ Faça um algoritmo que calcule o fatorial de um número.
 const fatorialN = (fator) => {
     if (fator == 0) {
@@ -935,6 +936,7 @@ const vetorX = [9, 3, 7];
 const vetorY = [6, 3, 1];
 trocaVetor(vetorX, vetorY)
 
+console.log('------------------')
 /* 40) ​Faça uma função que receba como parâmetro um vetor de notas e mostre os conceitos de cada uma de 
 modo que de 0,0 a 4,9 seja atribuído o conceito D, de 5,0 a 6,9 seja atribuído o conceito C, de 7,0 a 8,9 o conceito B e de 9,0 a 10,0 o conceito A. */
 const conceitoABC = (e) => {
@@ -947,7 +949,7 @@ const conceitoABC = (e) => {
     } else if (e >= 9 && e <= 10) {
         return `${e = 'A'}`
     } else {
-        return 'Insira uma nota entre 0 e 10!!!'
+        return 'try a number between 0-10!!!'
     }
 }
 const notasConceito = [3, 6, 8, 10, 11]
