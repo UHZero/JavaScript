@@ -270,4 +270,82 @@ const arrayMenor = [3, 6, -8, 2, 1, 0]
 console.log(menorNumero(arrayMenor))
 
 console.log('-------------------------')
-/* 22)  */
+/* 22)  Desenvolva uma função que receba como parâmetro um número de 1 a 10. Internamente, na função, será 
+gerado um número aleatório de 1 a 10. A função deverá retornar se o parâmetro de entrada foi igual ao número 
+sorteado internamente. Se o valor fornecido foi o sorteado, retorne "Parabéns! O número sorteado foi o X". Se 
+não for igual, retorne "Que pena! O número sorteado foi o X". X é o número que foi sorteado.*/
+const numeroDaSorte = (param, max = 10, min = 1) => {
+    let randomica = Math.random() * ((max - min) + min);
+    console.log(Math.ceil(randomica))
+    if(param === Math.ceil(randomica)){
+        return 'Parabéns você ganhou 1.000.000 R$'
+    }else {
+        return 'Não desista, tente novamente!'
+    }
+}
+console.log(numeroDaSorte(6))
+
+console.log('-------------------------')
+/* 23) Criar uma função que receba uma string como parâmetro e conte quantas palavras tem nela. */
+const contaPalavras = (string) => {
+    let contaPalavra = string.match(/\w+/gi)
+    return contaPalavra.length
+}
+const stringRandom = "uma string qualquer, de qualquer tamanho"
+console.log(contaPalavras(stringRandom))
+
+console.log('-------------------------')
+/* 24) Desenvolva uma função que recebe um caractere e uma string como parâmetros e retorne a quantidade de 
+vezes que o caractere se repete na string. A função deverá ser case-sensitive, ou seja, irá diferenciar 
+maiúsculas de minúsculas. */
+const contaCaracteres = (string, char) => {
+    const regEx = new RegExp(char, 'g')
+    const contaCaractere = string.match(regEx)
+    return contaCaractere.length
+}
+const stringCaractere = "uma string qualquer, de qualquer tamanho"
+console.log(contaCaracteres(stringCaractere, 't'))
+
+console.log('-------------------------')
+/* 25) A fim de criar um mecanismo de busca para sua aplicação, você precisa iniciar criando uma função para identificar palavras semelhantes.Escreva uma função que recebe como primeiro parâmetro uma palavra e, como segundo parâmetro, um array de strings. A função deverá filtrar as palavras do array que contêm nelas a string do primeiro parâmetro */
+const buscaSemelhante = (array, palavra) => {
+    const regEx = new RegExp('\\b' + palavra, 'g')
+    let newArray = [];
+    for(i in array){
+        if(array[i].match(regEx)){
+            newArray.push(array[i])
+        }
+    }
+    return newArray
+}
+const stringarray = ['batata', 'pão', 'bazuca', 'ponei', 'balisco']
+console.log(buscaSemelhante(stringarray, 'ba'))
+
+console.log('-------------------------')
+/* 26) Desenvolva uma função que receba uma string como parâmetro e retorne essa string somente com as consoantes, ou seja, sem as vogais */
+const semAEIOU = (string) => {
+    let newString = ''
+    const regEx = /[^a|e|i|o|u]/gi
+    for(let i = 0; i < string.length; i++){
+        if(string[i].match(regEx)) {
+            newString += string[i]
+        }       
+    }
+    return newString
+}
+const texto1 = 'sem vogal, apenas consoante!'
+console.log(semAEIOU(texto1))
+
+console.log('-------------------------')
+/* 27) Desenvolva uma função que recebe um objeto como parâmetro e retorne um outro objeto que corresponde ao 
+ao objeto recebido como parâmetro, porém com as posições das chaves e valores invertidas, conforme 
+exemplo a seguir: */
+const inversor = (obj) => {
+    let newObj = {};
+    for(i in obj){
+        newObj[obj[i]] = i
+    }
+    return newObj
+}
+const objetoTeste = { a: 2, b: 4, c: 6 }
+console.log(inversor(objetoTeste))
